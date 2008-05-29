@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Piece_Unity_Component_Pagination</name>
+ <channel>pear.piece-framework.com</channel>
+ <summary>A Pagination component</summary>
+ <description>A Pagination component</description>
+ <lead>
+  <name>KUBO Atsuhiro</name>
+  <user>iteman</user>
+  <email>iteman@users.sourceforge.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2008-05-29</date>
+ <time>20:01:26</time>
+ <version>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License (revised)</license>
+ <notes>This is the first stable release of Piece_Unity_Component_Pagination.</notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <dir name="data">
+    <dir name="pear.piece-framework.com">
+     <dir name="Piece_Unity_Component_Pagination">
+      <file name="pagination.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /data/pear.piece-framework.com/Piece_Unity_Component_Pagination -->
+    </dir> <!-- /data/pear.piece-framework.com -->
+   </dir> <!-- /data -->
+   <dir name="docs">
+    <file name="LICENSE" role="doc">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+   </dir> <!-- /docs -->
+   <dir name="Piece">
+    <dir name="Unity">
+     <dir name="Plugin">
+      <dir name="Renderer">
+       <dir name="HTML">
+        <dir name="ComponentDeployer">
+         <file name="Pagination.php" role="php">
+          <tasks:replace from="@package_version@" to="version" type="package-info" />
+         </file>
+        </dir> <!-- /Piece/Unity/Plugin/Renderer/HTML/ComponentDeployer -->
+       </dir> <!-- /Piece/Unity/Plugin/Renderer/HTML -->
+      </dir> <!-- /Piece/Unity/Plugin/Renderer -->
+     </dir> <!-- /Piece/Unity/Plugin -->
+     <dir name="Service">
+      <file name="Pagination.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+      <file name="Paginator.php" role="php">
+       <tasks:replace from="@package_version@" to="version" type="package-info" />
+      </file>
+     </dir> <!-- /Piece/Unity/Service -->
+    </dir> <!-- /Piece/Unity -->
+   </dir> <!-- /Piece -->
+   <dir name="tests">
+    <dir name="Piece">
+     <dir name="Unity">
+      <dir name="Service">
+       <file name="PaginationTestCase.php" role="test">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /tests/Piece/Unity/Service -->
+     </dir> <!-- /tests/Piece/Unity -->
+    </dir> <!-- /tests/Piece -->
+    <file name="prepare.php" role="test">
+     <tasks:replace from="@package_version@" to="version" type="package-info" />
+    </file>
+   </dir> <!-- /tests -->
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.3.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.3</min>
+   </pearinstaller>
+   <package>
+    <name>Piece_Unity</name>
+    <channel>pear.piece-framework.com</channel>
+    <min>1.5.0</min>
+   </package>
+   <package>
+    <name>PEAR</name>
+    <channel>pear.php.net</channel>
+    <min>1.4.3</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2008-05-29</date>
+   <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License (revised)</license>
+   <notes>This is the first stable release of Piece_Unity_Component_Pagination.</notes>
+  </release>
+ </changelog>
+</package>
