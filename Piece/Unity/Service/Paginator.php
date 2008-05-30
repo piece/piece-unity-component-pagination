@@ -90,6 +90,10 @@ class Piece_Unity_Service_Paginator
             $this->currentPageNumber = 1;
         }
 
+        if ($this->currentPageNumber > $lastPageNumber) {
+            $this->currentPageNumber = 1;
+        }
+
         for ($i = 1; $i <= $lastPageNumber; ++$i) {
             $page = &new stdClass();
             $page->number = $i;
