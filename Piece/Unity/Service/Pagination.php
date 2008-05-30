@@ -82,7 +82,7 @@ class Piece_Unity_Service_Pagination
         $viewElement = &new Piece_Unity_ViewElement();
         $viewElement->setElementByRef('paginator', $paginator);
         $rendering = &new Piece_Unity_Service_Rendering_PHP();
-        $rendering->render(dirname(__FILE__) . '/../../../data/pear.piece-framework.com/Piece_Unity_Component_Pagination/pagination.php',
+        $rendering->render(dirname(__FILE__) . '/../../../data/pear.piece-framework.com/Piece_Unity_Component_Pagination/Pagination.php',
                            $viewElement
                            );
     }
