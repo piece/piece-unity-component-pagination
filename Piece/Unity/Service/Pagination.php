@@ -46,7 +46,7 @@ require_once 'Piece/Unity/ViewElement.php';
  * @subpackage Piece_Unity_Component_Pagination
  * @copyright  2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
  * @license    http://www.opensource.org/licenses/bsd-license.php  BSD License (revised)
- * @version    Release: @package_version@
+ * @version    Release: 0.1.0
  * @since      Class available since Release 0.1.0
  */
 class Piece_Unity_Service_Pagination
@@ -75,6 +75,7 @@ class Piece_Unity_Service_Pagination
 
     /**
      * @param Piece_Unity_Service_Paginator &$paginator
+     * @return string
      */
     function paginate(&$paginator)
     {
@@ -82,9 +83,14 @@ class Piece_Unity_Service_Pagination
         $viewElement = &new Piece_Unity_ViewElement();
         $viewElement->setElementByRef('paginator', $paginator);
         $rendering = &new Piece_Unity_Service_Rendering_PHP();
+        ob_start();
         $rendering->render(dirname(__FILE__) . '/../../../data/pear.piece-framework.com/Piece_Unity_Component_Pagination/Pagination.php',
                            $viewElement
                            );
+        $htmlFragment = ob_get_contents();
+        ob_end_clean();
+
+        return $htmlFragment;
     }
 
     /**#@-*/

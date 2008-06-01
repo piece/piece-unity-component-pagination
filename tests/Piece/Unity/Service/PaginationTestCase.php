@@ -93,11 +93,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->itemCount = 24;
         $paginator->itemsPerPage = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
-
-        ob_start();
-        $pagination->paginate($paginator);
-        $htmlFragment = ob_get_contents();
-        ob_end_clean();
+        $htmlFragment = $pagination->paginate($paginator);
 
         $this->assertEquals('1&nbsp;
 <a href="http://example.org/?_page=2">2</a>&nbsp;
@@ -117,11 +113,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->itemCount = 24;
         $paginator->itemsPerPage = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
-
-        ob_start();
-        $pagination->paginate($paginator);
-        $htmlFragment = ob_get_contents();
-        ob_end_clean();
+        $htmlFragment = $pagination->paginate($paginator);
 
         $this->assertEquals('<a href="http://example.org/?_page=1">Previous</a>&nbsp;
 <a href="http://example.org/?_page=1">1</a>&nbsp;
@@ -142,11 +134,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->itemCount = 24;
         $paginator->itemsPerPage = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
-
-        ob_start();
-        $pagination->paginate($paginator);
-        $htmlFragment = ob_get_contents();
-        ob_end_clean();
+        $htmlFragment = $pagination->paginate($paginator);
 
         $this->assertEquals('<a href="http://example.org/?_page=4">Previous</a>&nbsp;
 <a href="http://example.org/?_page=1">1</a>&nbsp;
@@ -166,11 +154,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->itemCount = 24;
         $paginator->itemsPerPage = 25;
         $pagination = &new Piece_Unity_Service_Pagination();
-
-        ob_start();
-        $pagination->paginate($paginator);
-        $htmlFragment = ob_get_contents();
-        ob_end_clean();
+        $htmlFragment = $pagination->paginate($paginator);
 
         $this->assertEquals('', $htmlFragment);
     }
@@ -183,11 +167,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->itemCount = 24;
         $paginator->itemsPerPage = 25;
         $pagination = &new Piece_Unity_Service_Pagination();
-
-        ob_start();
-        $pagination->paginate($paginator);
-        $htmlFragment = ob_get_contents();
-        ob_end_clean();
+        $htmlFragment = $pagination->paginate($paginator);
 
         $this->assertEquals('', $htmlFragment);
     }
@@ -200,11 +180,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->itemCount = 24;
         $paginator->itemsPerPage = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
-
-        ob_start();
-        $pagination->paginate($paginator);
-        $htmlFragment = ob_get_contents();
-        ob_end_clean();
+        $htmlFragment = $pagination->paginate($paginator);
 
         $this->assertEquals('1&nbsp;
 <a href="http://example.org/?_page=2">2</a>&nbsp;
