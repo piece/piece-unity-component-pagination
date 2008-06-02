@@ -39,9 +39,11 @@
 require_once 'Piece/Unity/Plugin/Common.php';
 require_once 'Piece/Unity/Service/Pagination.php';
 
-// {{{ Piece_Unity_Plugin_Renderer_HTML_ComponentDeployer_Pagination
+// {{{ Piece_Unity_Plugin_HTMLComponent_Pagination
 
 /**
+ * A html component deployer for Pagination.
+ *
  * @package    Piece_Unity
  * @subpackage Piece_Unity_Component_Pagination
  * @copyright  2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
@@ -49,7 +51,7 @@ require_once 'Piece/Unity/Service/Pagination.php';
  * @version    Release: @package_version@
  * @since      Class available since Release 0.1.0
  */
-class Piece_Unity_Plugin_Renderer_HTML_ComponentDeployer_Pagination extends Piece_Unity_Plugin_Common
+class Piece_Unity_Plugin_HTMLComponent_Pagination extends Piece_Unity_Plugin_Common
 {
 
     // {{{ properties
