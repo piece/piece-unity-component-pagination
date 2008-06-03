@@ -60,7 +60,7 @@ class Piece_Unity_Service_Paginator
     var $uri;
     var $currentPageNumber;
     var $count;
-    var $perPage;
+    var $limit;
     var $pages = array();
     var $currentPage;
     var $lastPage;
@@ -92,7 +92,7 @@ class Piece_Unity_Service_Paginator
         $this->currentPage = null;
         $this->lastPage = null;
 
-        $lastPageNumber = ceil($this->count / $this->perPage);
+        $lastPageNumber = ceil($this->count / $this->limit);
         if ($lastPageNumber == 1) {
             $this->currentPageNumber = 1;
         }
@@ -127,7 +127,7 @@ class Piece_Unity_Service_Paginator
      */
     function getOffset()
     {
-        return $this->perPage * ($this->currentPageNumber - 1);
+        return $this->limit * ($this->currentPageNumber - 1);
     }
 
     /**#@-*/

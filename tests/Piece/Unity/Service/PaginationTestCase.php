@@ -91,7 +91,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 1;
         $paginator->count = 24;
-        $paginator->perPage = 5;
+        $paginator->limit = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
         $htmlFragment = $pagination->paginate($paginator);
 
@@ -111,7 +111,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 2;
         $paginator->count = 24;
-        $paginator->perPage = 5;
+        $paginator->limit = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
         $htmlFragment = $pagination->paginate($paginator);
 
@@ -132,7 +132,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 5;
         $paginator->count = 24;
-        $paginator->perPage = 5;
+        $paginator->limit = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
         $htmlFragment = $pagination->paginate($paginator);
 
@@ -152,7 +152,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 1;
         $paginator->count = 24;
-        $paginator->perPage = 25;
+        $paginator->limit = 25;
         $pagination = &new Piece_Unity_Service_Pagination();
         $htmlFragment = $pagination->paginate($paginator);
 
@@ -165,7 +165,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 2;
         $paginator->count = 24;
-        $paginator->perPage = 25;
+        $paginator->limit = 25;
         $pagination = &new Piece_Unity_Service_Pagination();
         $htmlFragment = $pagination->paginate($paginator);
 
@@ -178,7 +178,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 6;
         $paginator->count = 24;
-        $paginator->perPage = 5;
+        $paginator->limit = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
         $htmlFragment = $pagination->paginate($paginator);
 
@@ -198,7 +198,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 1;
         $paginator->count = 24;
-        $paginator->perPage = 5;
+        $paginator->limit = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
         $pagination->paginate($paginator);
 

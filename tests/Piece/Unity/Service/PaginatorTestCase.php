@@ -79,7 +79,7 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
         $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 2;
         $paginator->count = 24;
-        $paginator->perPage = 5;
+        $paginator->limit = 5;
 
         $this->assertEquals(5, $paginator->getOffset());
     }
