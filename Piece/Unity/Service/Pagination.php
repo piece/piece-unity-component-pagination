@@ -42,6 +42,8 @@ require_once 'Piece/Unity/ViewElement.php';
 // {{{ Piece_Unity_Service_Pagination
 
 /**
+ * A pagination service.
+ *
  * @package    Piece_Unity
  * @subpackage Piece_Unity_Component_Pagination
  * @copyright  2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
@@ -74,12 +76,16 @@ class Piece_Unity_Service_Pagination
     // {{{ paginate()
 
     /**
+     * Paginates by a given Piece_Unity_Service_Paginator object and creates
+     * a pagination html fragment.
+     *
      * @param Piece_Unity_Service_Paginator &$paginator
      * @return string
      */
     function paginate(&$paginator)
     {
         $paginator->paginate();
+
         $viewElement = &new Piece_Unity_ViewElement();
         $viewElement->setElementByRef('paginator', $paginator);
         $rendering = &new Piece_Unity_Service_Rendering_PHP();

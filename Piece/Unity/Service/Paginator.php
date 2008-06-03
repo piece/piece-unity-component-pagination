@@ -39,6 +39,8 @@
 // {{{ Piece_Unity_Service_Paginator
 
 /**
+ * The paginator for Pagination.
+ *
  * @package    Piece_Unity
  * @subpackage Piece_Unity_Component_Pagination
  * @copyright  2008 KUBO Atsuhiro <iteman@users.sourceforge.net>
@@ -82,6 +84,7 @@ class Piece_Unity_Service_Paginator
     // {{{ paginate()
 
     /**
+     * Paginates by the current configuration.
      */
     function paginate()
     {
