@@ -88,10 +88,10 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
     function testShouldPaginateOnTheFirstPage()
     {
         $paginator = &new Piece_Unity_Service_Paginator();
-        $paginator->targetUri = 'http://example.org/';
+        $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 1;
-        $paginator->itemCount = 24;
-        $paginator->itemsPerPage = 5;
+        $paginator->count = 24;
+        $paginator->perPage = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
         $htmlFragment = $pagination->paginate($paginator);
 
@@ -108,10 +108,10 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
     function testShouldPaginateOnTheSecondPage()
     {
         $paginator = &new Piece_Unity_Service_Paginator();
-        $paginator->targetUri = 'http://example.org/';
+        $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 2;
-        $paginator->itemCount = 24;
-        $paginator->itemsPerPage = 5;
+        $paginator->count = 24;
+        $paginator->perPage = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
         $htmlFragment = $pagination->paginate($paginator);
 
@@ -129,10 +129,10 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
     function testShouldPaginateOnTheLastPage()
     {
         $paginator = &new Piece_Unity_Service_Paginator();
-        $paginator->targetUri = 'http://example.org/';
+        $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 5;
-        $paginator->itemCount = 24;
-        $paginator->itemsPerPage = 5;
+        $paginator->count = 24;
+        $paginator->perPage = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
         $htmlFragment = $pagination->paginate($paginator);
 
@@ -149,10 +149,10 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
     function testShouldNotPaginateIfThePageCountIsOne()
     {
         $paginator = &new Piece_Unity_Service_Paginator();
-        $paginator->targetUri = 'http://example.org/';
+        $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 1;
-        $paginator->itemCount = 24;
-        $paginator->itemsPerPage = 25;
+        $paginator->count = 24;
+        $paginator->perPage = 25;
         $pagination = &new Piece_Unity_Service_Pagination();
         $htmlFragment = $pagination->paginate($paginator);
 
@@ -162,10 +162,10 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
     function testShouldNotPaginateEvenIfAWrongCurrentPageNumberIsGivenIfThePageCountIsOne()
     {
         $paginator = &new Piece_Unity_Service_Paginator();
-        $paginator->targetUri = 'http://example.org/';
+        $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 2;
-        $paginator->itemCount = 24;
-        $paginator->itemsPerPage = 25;
+        $paginator->count = 24;
+        $paginator->perPage = 25;
         $pagination = &new Piece_Unity_Service_Pagination();
         $htmlFragment = $pagination->paginate($paginator);
 
@@ -175,10 +175,10 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
     function testShouldDisplayTheFirstPageIfAWrongCurrentPageNumberIsGiven()
     {
         $paginator = &new Piece_Unity_Service_Paginator();
-        $paginator->targetUri = 'http://example.org/';
+        $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 6;
-        $paginator->itemCount = 24;
-        $paginator->itemsPerPage = 5;
+        $paginator->count = 24;
+        $paginator->perPage = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
         $htmlFragment = $pagination->paginate($paginator);
 
@@ -195,14 +195,14 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
     function testShouldWorkMoreThanOnceWithTheSamePaginatorObject()
     {
         $paginator = &new Piece_Unity_Service_Paginator();
-        $paginator->targetUri = 'http://example.org/';
+        $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 1;
-        $paginator->itemCount = 24;
-        $paginator->itemsPerPage = 5;
+        $paginator->count = 24;
+        $paginator->perPage = 5;
         $pagination = &new Piece_Unity_Service_Pagination();
         $pagination->paginate($paginator);
 
-        $paginator->itemCount = 12;
+        $paginator->count = 12;
         $htmlFragment = $pagination->paginate($paginator);
 
         $this->assertEquals('1&nbsp;

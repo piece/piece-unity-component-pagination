@@ -55,10 +55,10 @@ class Piece_Unity_Service_Paginator
      * @access public
      */
 
-    var $targetUri;
+    var $uri;
     var $currentPageNumber;
-    var $itemCount;
-    var $itemsPerPage;
+    var $count;
+    var $perPage;
     var $pages = array();
     var $currentPage;
     var $lastPage;
@@ -89,7 +89,7 @@ class Piece_Unity_Service_Paginator
         $this->currentPage = null;
         $this->lastPage = null;
 
-        $lastPageNumber = ceil($this->itemCount / $this->itemsPerPage);
+        $lastPageNumber = ceil($this->count / $this->perPage);
         if ($lastPageNumber == 1) {
             $this->currentPageNumber = 1;
         }
@@ -101,7 +101,9 @@ class Piece_Unity_Service_Paginator
         for ($i = 1; $i <= $lastPageNumber; ++$i) {
             $page = &new stdClass();
             $page->number = $i;
-            $page->uri = $this->targetUri . ((strstr($this->targetUri, '?') !== false) ? '&' : '?') . "{$this->pageNumberKey}=$i";
+            $page->uri = $this->uri .
+                ((strstr($this->uri, '?') !== false) ? '&' : '?') .
+                "{$this->pageNumberKey}=$i";
             $this->pages[$i] = &$page;
 
             if ($this->currentPageNumber == $i) {
