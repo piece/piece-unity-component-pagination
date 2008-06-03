@@ -44,7 +44,7 @@ $releaseVersion = '0.1.0';
 $releaseStability = 'alpha';
 $apiVersion = '0.1.0';
 $apiStability = 'alpha';
-$notes = 'This is the first stable release of Piece_Unity_Component_Pagination.';
+$notes = 'The first alpha release of Piece_Unity_Component_Pagination.';
 
 $package = new PEAR_PackageFileManager2();
 $package->setOptions(array('filelistgenerator' => 'file',

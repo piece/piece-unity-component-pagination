@@ -13,8 +13,8 @@
   <email>iteman@users.sourceforge.net</email>
   <active>yes</active>
  </lead>
- <date>2008-05-29</date>
- <time>20:01:26</time>
+ <date>2008-06-03</date>
+ <time>21:13:38</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
@@ -24,13 +24,13 @@
   <api>alpha</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License (revised)</license>
- <notes>This is the first stable release of Piece_Unity_Component_Pagination.</notes>
+ <notes>The first alpha release of Piece_Unity_Component_Pagination.</notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <dir name="data">
     <dir name="pear.piece-framework.com">
      <dir name="Piece_Unity_Component_Pagination">
-      <file name="pagination.php" role="php">
+      <file name="Pagination.php" role="php">
        <tasks:replace from="@package_version@" to="version" type="package-info" />
       </file>
      </dir> <!-- /data/pear.piece-framework.com/Piece_Unity_Component_Pagination -->
@@ -44,15 +44,11 @@
    <dir name="Piece">
     <dir name="Unity">
      <dir name="Plugin">
-      <dir name="Renderer">
-       <dir name="HTML">
-        <dir name="ComponentDeployer">
-         <file name="Pagination.php" role="php">
-          <tasks:replace from="@package_version@" to="version" type="package-info" />
-         </file>
-        </dir> <!-- /Piece/Unity/Plugin/Renderer/HTML/ComponentDeployer -->
-       </dir> <!-- /Piece/Unity/Plugin/Renderer/HTML -->
-      </dir> <!-- /Piece/Unity/Plugin/Renderer -->
+      <dir name="HTMLComponent">
+       <file name="Pagination.php" role="php">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+      </dir> <!-- /Piece/Unity/Plugin/HTMLComponent -->
      </dir> <!-- /Piece/Unity/Plugin -->
      <dir name="Service">
       <file name="Pagination.php" role="php">
@@ -69,6 +65,9 @@
      <dir name="Unity">
       <dir name="Service">
        <file name="PaginationTestCase.php" role="test">
+        <tasks:replace from="@package_version@" to="version" type="package-info" />
+       </file>
+       <file name="PaginatorTestCase.php" role="test">
         <tasks:replace from="@package_version@" to="version" type="package-info" />
        </file>
       </dir> <!-- /tests/Piece/Unity/Service -->
@@ -111,9 +110,9 @@
     <release>alpha</release>
     <api>alpha</api>
    </stability>
-   <date>2008-05-29</date>
+   <date>2008-06-03</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License (revised)</license>
-   <notes>This is the first stable release of Piece_Unity_Component_Pagination.</notes>
+   <notes>The first alpha release of Piece_Unity_Component_Pagination.</notes>
   </release>
  </changelog>
 </package>
