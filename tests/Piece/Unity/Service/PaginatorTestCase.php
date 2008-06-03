@@ -36,10 +36,14 @@
  * @since      File available since Release 0.1.0
  */
 
-// {{{ Piece_Unity_Service_Paginator
+require_once realpath(dirname(__FILE__) . '/../../../prepare.php');
+require_once 'PHPUnit.php';
+require_once 'Piece/Unity/Service/Paginator.php';
+
+// {{{ Piece_Unity_Service_PaginatorTestCase
 
 /**
- * The paginator for Pagination.
+ * Some tests for Piece_Unity_Service_Paginator.
  *
  * @package    Piece_Unity
  * @subpackage Piece_Unity_Component_Pagination
@@ -48,7 +52,7 @@
  * @version    Release: @package_version@
  * @since      Class available since Release 0.1.0
  */
-class Piece_Unity_Service_Paginator
+class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
 {
 
     // {{{ properties
@@ -56,17 +60,6 @@ class Piece_Unity_Service_Paginator
     /**#@+
      * @access public
      */
-
-    var $uri;
-    var $currentPageNumber;
-    var $count;
-    var $perPage;
-    var $pages = array();
-    var $currentPage;
-    var $lastPage;
-    var $pageNumberKey = '_page';
-    var $previousLabel = 'Previous';
-    var $nextLabel = 'Next';
 
     /**#@-*/
 
@@ -80,54 +73,15 @@ class Piece_Unity_Service_Paginator
      * @access public
      */
 
-    // }}}
-    // {{{ paginate()
-
-    /**
-     * Paginates by the current configuration.
-     */
-    function paginate()
+    function testShouldProvideTheOffset()
     {
-        $this->pages = array();
-        $this->currentPage = null;
-        $this->lastPage = null;
+        $paginator = &new Piece_Unity_Service_Paginator();
+        $paginator->uri = 'http://example.org/';
+        $paginator->currentPageNumber = 2;
+        $paginator->count = 24;
+        $paginator->perPage = 5;
 
-        $lastPageNumber = ceil($this->count / $this->perPage);
-        if ($lastPageNumber == 1) {
-            $this->currentPageNumber = 1;
-        }
-
-        if ($this->currentPageNumber > $lastPageNumber) {
-            $this->currentPageNumber = 1;
-        }
-
-        for ($i = 1; $i <= $lastPageNumber; ++$i) {
-            $page = &new stdClass();
-            $page->number = $i;
-            $page->uri = $this->uri .
-                ((strstr($this->uri, '?') !== false) ? '&' : '?') .
-                "{$this->pageNumberKey}=$i";
-            $this->pages[$i] = &$page;
-
-            if ($this->currentPageNumber == $i) {
-                $this->currentPage = &$page;
-            }
-        }
-
-        $this->lastPage = &$this->pages[$lastPageNumber];
-    }
-
-    // }}}
-    // {{{ getOffset()
-
-    /**
-     * Gets the appropriate offset by the limit and the current page number.
-     *
-     * @return integer
-     */
-    function getOffset()
-    {
-        return $this->perPage * ($this->currentPageNumber - 1);
+        $this->assertEquals(5, $paginator->getOffset());
     }
 
     /**#@-*/
