@@ -192,6 +192,27 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
                             );
     }
 
+    function testShouldWorkMoreThanOnceWithTheSamePaginatorObject()
+    {
+        $paginator = &new Piece_Unity_Service_Paginator();
+        $paginator->targetUri = 'http://example.org/';
+        $paginator->currentPageNumber = 1;
+        $paginator->itemCount = 24;
+        $paginator->itemsPerPage = 5;
+        $pagination = &new Piece_Unity_Service_Pagination();
+        $pagination->paginate($paginator);
+
+        $paginator->itemCount = 12;
+        $htmlFragment = $pagination->paginate($paginator);
+
+        $this->assertEquals('1&nbsp;
+<a href="http://example.org/?_page=2">2</a>&nbsp;
+<a href="http://example.org/?_page=3">3</a>&nbsp;
+<a href="http://example.org/?_page=2">Next</a>&nbsp;',
+                            trim($htmlFragment)
+                            );
+    }
+
     /**#@-*/
 
     /**#@+

@@ -85,6 +85,10 @@ class Piece_Unity_Service_Paginator
      */
     function paginate()
     {
+        $this->pages = array();
+        $this->currentPage = null;
+        $this->lastPage = null;
+
         $lastPageNumber = ceil($this->itemCount / $this->itemsPerPage);
         if ($lastPageNumber == 1) {
             $this->currentPageNumber = 1;
