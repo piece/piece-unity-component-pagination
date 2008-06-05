@@ -84,6 +84,13 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
         $this->assertEquals(5, $paginator->getOffset());
     }
 
+    function testShouldTheDefaultValueOfTheCurrentPageNumberPropertyOne()
+    {
+        $paginator = &new Piece_Unity_Service_Paginator();
+
+        $this->assertEquals(1, $paginator->currentPageNumber);
+    }
+
     /**#@-*/
 
     /**#@+

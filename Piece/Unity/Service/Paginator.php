@@ -58,7 +58,7 @@ class Piece_Unity_Service_Paginator
      */
 
     var $uri;
-    var $currentPageNumber;
+    var $currentPageNumber = 1;
     var $count;
     var $limit;
     var $pages = array();
