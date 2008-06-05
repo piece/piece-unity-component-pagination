@@ -13,8 +13,8 @@
   <email>iteman@users.sourceforge.net</email>
   <active>yes</active>
  </lead>
- <date>2008-06-03</date>
- <time>21:13:38</time>
+ <date>2008-06-05</date>
+ <time>17:26:58</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
@@ -110,7 +110,7 @@
     <release>alpha</release>
     <api>alpha</api>
    </stability>
-   <date>2008-06-03</date>
+   <date>2008-06-05</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License (revised)</license>
    <notes>The first alpha release of Piece_Unity_Component_Pagination.</notes>
   </release>
