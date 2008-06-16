@@ -159,7 +159,7 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
         $this->assertEquals('', $htmlFragment);
     }
 
-    function testShouldNotPaginateEvenIfAWrongCurrentPageNumberIsGivenIfThePageCountIsOne()
+    function testShouldNotPaginateIfThePageCountIsOneEvenIfAWrongCurrentPageNumberIsGiven()
     {
         $paginator = &new Piece_Unity_Service_Paginator();
         $paginator->uri = 'http://example.org/';
