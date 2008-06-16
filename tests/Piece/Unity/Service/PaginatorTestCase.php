@@ -91,6 +91,51 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
         $this->assertEquals(1, $paginator->currentPageNumber);
     }
 
+    function testShouldProvideWhetherThePaginatorHasMultiplePagesOrNot()
+    {
+        $paginator = &new Piece_Unity_Service_Paginator();
+        $paginator->uri = 'http://example.org/';
+        $paginator->count = 243;
+        $paginator->limit = 25;
+
+        $this->assertTrue($paginator->hasPages());
+
+        $paginator->count = 243;
+        $paginator->limit = 250;
+
+        $this->assertFalse($paginator->hasPages());
+    }
+
+    function testShouldProvideTheStartCountAndEndCountOnTheCurrentPage()
+    {
+        $paginator = &new Piece_Unity_Service_Paginator();
+        $paginator->uri = 'http://example.org/';
+        $paginator->count = 243;
+        $paginator->limit = 25;
+
+        $this->assertEquals(1, $paginator->getStartCount());
+        $this->assertEquals(25, $paginator->getEndCount());
+
+        $paginator->currentPageNumber = 10;
+        $paginator->count = 243;
+        $paginator->limit = 25;
+
+        $this->assertEquals(226, $paginator->getStartCount());
+        $this->assertEquals(243, $paginator->getEndCount());
+    }
+
+    function testShouldFxiedTheCurrentPageNumber()
+    {
+        $paginator = &new Piece_Unity_Service_Paginator();
+        $paginator->uri = 'http://example.org/';
+        $paginator->currentPageNumber = 2;
+        $paginator->count = 24;
+        $paginator->limit = 25;
+
+        $this->assertEquals(0, $paginator->getOffset());
+        $this->assertEquals(1, $paginator->currentPageNumber);
+    }
+
     /**#@-*/
 
     /**#@+

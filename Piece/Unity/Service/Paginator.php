@@ -127,7 +127,56 @@ class Piece_Unity_Service_Paginator
      */
     function getOffset()
     {
+        $lastPageNumber = ceil($this->count / $this->limit);
+        if ($lastPageNumber == 1) {
+            $this->currentPageNumber = 1;
+        }
+
+        if ($this->currentPageNumber > $lastPageNumber) {
+            $this->currentPageNumber = 1;
+        }
+
         return $this->limit * ($this->currentPageNumber - 1);
+    }
+
+    // }}}
+    // {{{ getStartCount()
+
+    /**
+     * Gets the start count on the current page.
+     *
+     * @return integer
+     */
+    function getStartCount()
+    {
+        return $this->getOffset() + 1;
+    }
+
+    // }}}
+    // {{{ getEndCount()
+
+    /**
+     * Gets the end count on the current page.
+     *
+     * @return integer
+     */
+    function getEndCount()
+    {
+        return ($this->getOffset() + $this->limit < $this->count) ? $this->getOffset() + $this->limit
+                                                                  : $this->count;
+    }
+
+    // }}}
+    // {{{ hasPages()
+
+    /**
+     * Checks whether the paginator has multiple pages or not.
+     *
+     * @return boolean
+     */
+    function hasPages()
+    {
+        return ceil($this->count / $this->limit) > 1;
     }
 
     /**#@-*/
