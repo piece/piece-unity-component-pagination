@@ -36,7 +36,7 @@
  * @since      File available since Release 0.1.0
  */
 ?>
-<?php if ($paginator->lastPage->number > 1): ?>
+<?php if ($paginator->hasPages()): ?>
 <?php if ($paginator->currentPage->number > 1): ?>
 <a href="<?php echo $paginator->pages[ $paginator->currentPage->number - 1 ]->uri ?>"><?php echo $paginator->previousLabel ?></a>&nbsp;
 <?php endif; ?>
