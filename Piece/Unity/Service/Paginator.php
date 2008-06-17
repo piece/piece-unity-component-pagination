@@ -74,6 +74,9 @@ class Piece_Unity_Service_Paginator
      * @access private
      */
 
+    var $_previousLimit;
+    var $_previousPageNumber;
+
     /**#@-*/
 
     /**#@+
@@ -107,6 +110,8 @@ class Piece_Unity_Service_Paginator
         }
 
         $this->lastPage = &$this->pages[ $this->getLastPageNumber() ];
+        $this->_previousLimit = $this->limit;
+        $this->_previousPageNumber = $this->currentPageNumber;
     }
 
     // }}}
@@ -192,6 +197,13 @@ class Piece_Unity_Service_Paginator
     {
         if ($this->getLastPageNumber() == 1) {
             $this->currentPageNumber = 1;
+        }
+
+        if (!is_null($this->_previousLimit)
+            && $this->_previousLimit != $this->limit
+            ) {
+            $this->currentPageNumber =
+                ceil($this->limit * ($this->_previousPageNumber - 1) / $this->limit);
         }
 
         if ($this->currentPageNumber > $this->getLastPageNumber()) {
