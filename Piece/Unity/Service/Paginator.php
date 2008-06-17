@@ -91,17 +91,9 @@ class Piece_Unity_Service_Paginator
         $this->pages = array();
         $this->currentPage = null;
         $this->lastPage = null;
+        $this->_correctCurrentPageNumber();
 
-        $lastPageNumber = $this->getLastPageNumber();
-        if ($lastPageNumber == 1) {
-            $this->currentPageNumber = 1;
-        }
-
-        if ($this->currentPageNumber > $lastPageNumber) {
-            $this->currentPageNumber = 1;
-        }
-
-        for ($i = 1; $i <= $lastPageNumber; ++$i) {
+        for ($i = 1; $i <= $this->getLastPageNumber(); ++$i) {
             $page = &new stdClass();
             $page->number = $i;
             $page->uri = $this->uri .
@@ -114,7 +106,7 @@ class Piece_Unity_Service_Paginator
             }
         }
 
-        $this->lastPage = &$this->pages[$lastPageNumber];
+        $this->lastPage = &$this->pages[ $this->getLastPageNumber() ];
     }
 
     // }}}
@@ -127,15 +119,7 @@ class Piece_Unity_Service_Paginator
      */
     function getOffset()
     {
-        $lastPageNumber = $this->getLastPageNumber();
-        if ($lastPageNumber == 1) {
-            $this->currentPageNumber = 1;
-        }
-
-        if ($this->currentPageNumber > $lastPageNumber) {
-            $this->currentPageNumber = 1;
-        }
-
+        $this->_correctCurrentPageNumber();
         return $this->limit * ($this->currentPageNumber - 1);
     }
 
@@ -197,6 +181,23 @@ class Piece_Unity_Service_Paginator
     /**#@+
      * @access private
      */
+
+    // }}}
+    // {{{ _correctCurrentPageNumber()
+
+    /**
+     * Corrects the current page number.
+     */
+    function _correctCurrentPageNumber()
+    {
+        if ($this->getLastPageNumber() == 1) {
+            $this->currentPageNumber = 1;
+        }
+
+        if ($this->currentPageNumber > $this->getLastPageNumber()) {
+            $this->currentPageNumber = 1;
+        }
+    }
 
     /**#@-*/
 
