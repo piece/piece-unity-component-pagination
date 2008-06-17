@@ -124,7 +124,7 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
         $this->assertEquals(243, $paginator->getEndCount());
     }
 
-    function testShouldFxiedTheCurrentPageNumber()
+    function testShouldCorrectTheCurrentPageNumber()
     {
         $paginator = &new Piece_Unity_Service_Paginator();
         $paginator->uri = 'http://example.org/';
