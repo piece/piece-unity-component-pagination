@@ -92,7 +92,7 @@ class Piece_Unity_Service_Paginator
         $this->currentPage = null;
         $this->lastPage = null;
 
-        $lastPageNumber = ceil($this->count / $this->limit);
+        $lastPageNumber = $this->getLastPageNumber();
         if ($lastPageNumber == 1) {
             $this->currentPageNumber = 1;
         }
@@ -127,7 +127,7 @@ class Piece_Unity_Service_Paginator
      */
     function getOffset()
     {
-        $lastPageNumber = ceil($this->count / $this->limit);
+        $lastPageNumber = $this->getLastPageNumber();
         if ($lastPageNumber == 1) {
             $this->currentPageNumber = 1;
         }
@@ -176,7 +176,20 @@ class Piece_Unity_Service_Paginator
      */
     function hasPages()
     {
-        return ceil($this->count / $this->limit) > 1;
+        return $this->getLastPageNumber() > 1;
+    }
+
+    // }}}
+    // {{{ getLastPageNumber()
+
+    /**
+     * Gets the last page number.
+     *
+     * @return interger
+     */
+    function getLastPageNumber()
+    {
+        return ceil($this->count / $this->limit);
     }
 
     /**#@-*/
