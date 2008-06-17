@@ -178,7 +178,7 @@ class Piece_Unity_Service_Paginator
      */
     function getLastPageNumber()
     {
-        return ceil($this->count / $this->limit);
+        return $this->_calcPageNumber($this->count);
     }
 
     /**#@-*/
@@ -203,12 +203,28 @@ class Piece_Unity_Service_Paginator
             && $this->_previousLimit != $this->limit
             ) {
             $this->currentPageNumber =
-                ceil($this->limit * ($this->_previousPageNumber - 1) / $this->limit);
+                $this->_calcPageNumber($this->limit *
+                                       ($this->_previousPageNumber - 1)
+                                       );
         }
 
         if ($this->currentPageNumber > $this->getLastPageNumber()) {
             $this->currentPageNumber = 1;
         }
+    }
+
+    // }}}
+    // {{{ _calcPageNumber()
+
+    /**
+     * Calculates the page number by a given count and the limit.
+     *
+     * @param integer $count
+     * @return interger
+     */
+    function _calcPageNumber($count)
+    {
+        return ceil($count / $this->limit);
     }
 
     /**#@-*/
