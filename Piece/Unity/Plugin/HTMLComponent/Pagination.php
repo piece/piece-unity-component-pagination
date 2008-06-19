@@ -42,7 +42,7 @@ require_once 'Piece/Unity/Service/Pagination.php';
 // {{{ Piece_Unity_Plugin_HTMLComponent_Pagination
 
 /**
- * A html component deployer for Pagination.
+ * A HTML component for Pagination.
  *
  * @package    Piece_Unity
  * @subpackage Piece_Unity_Component_Pagination

@@ -77,7 +77,7 @@ class Piece_Unity_Service_Pagination
 
     /**
      * Paginates by a given Piece_Unity_Service_Paginator object and creates
-     * a pagination html fragment.
+     * a pagination HTML fragment.
      *
      * @param Piece_Unity_Service_Paginator &$paginator
      * @return string
