@@ -6,25 +6,27 @@
  <name>Piece_Unity_Component_Pagination</name>
  <channel>pear.piece-framework.com</channel>
  <summary>A Pagination component</summary>
- <description>A Pagination component</description>
+ <description>Piece_Unity_Component_Pagination is a Pagination component.
+
+Piece_Unity_Component_Pagination provides a service which creates a pagination HTML fragment by a paginator object in a view. This component can be used with any HTML renderer.</description>
  <lead>
   <name>KUBO Atsuhiro</name>
   <user>iteman</user>
   <email>iteman@users.sourceforge.net</email>
   <active>yes</active>
  </lead>
- <date>2008-06-05</date>
- <time>17:26:58</time>
+ <date>2008-06-19</date>
+ <time>13:53:04</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
  </version>
  <stability>
-  <release>alpha</release>
-  <api>alpha</api>
+  <release>beta</release>
+  <api>beta</api>
  </stability>
  <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License (revised)</license>
- <notes>The first alpha release of Piece_Unity_Component_Pagination.</notes>
+ <notes>The first beta release of Piece_Unity_Component_Pagination.</notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <dir name="data">
@@ -107,12 +109,12 @@
     <api>0.1.0</api>
    </version>
    <stability>
-    <release>alpha</release>
-    <api>alpha</api>
+    <release>beta</release>
+    <api>beta</api>
    </stability>
-   <date>2008-06-05</date>
+   <date>2008-06-19</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License (revised)</license>
-   <notes>The first alpha release of Piece_Unity_Component_Pagination.</notes>
+   <notes>The first beta release of Piece_Unity_Component_Pagination.</notes>
   </release>
  </changelog>
 </package>

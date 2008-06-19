@@ -41,10 +41,10 @@ require_once 'PEAR/PackageFileManager2.php';
 PEAR::staticPushErrorHandling(PEAR_ERROR_CALLBACK, create_function('$error', 'var_dump($error); exit();'));
 
 $releaseVersion = '0.1.0';
-$releaseStability = 'alpha';
+$releaseStability = 'beta';
 $apiVersion = '0.1.0';
-$apiStability = 'alpha';
-$notes = 'The first alpha release of Piece_Unity_Component_Pagination.';
+$apiStability = 'beta';
+$notes = 'The first beta release of Piece_Unity_Component_Pagination.';
 
 $package = new PEAR_PackageFileManager2();
 $package->setOptions(array('filelistgenerator' => 'file',
@@ -60,7 +60,9 @@ $package->setOptions(array('filelistgenerator' => 'file',
 $package->setPackage('Piece_Unity_Component_Pagination');
 $package->setPackageType('php');
 $package->setSummary('A Pagination component');
-$package->setDescription('A Pagination component');
+$package->setDescription('Piece_Unity_Component_Pagination is a Pagination component.
+
+Piece_Unity_Component_Pagination provides a service which creates a pagination HTML fragment by a paginator object in a view. This component can be used with any HTML renderer.');
 $package->setChannel('pear.piece-framework.com');
 $package->setLicense('BSD License (revised)', 'http://www.opensource.org/licenses/bsd-license.php');
 $package->setAPIVersion($apiVersion);
