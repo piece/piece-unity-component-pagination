@@ -125,7 +125,7 @@ class Piece_Unity_Service_Paginator
     function getOffset()
     {
         $this->_correctCurrentPageNumber();
-        return $this->_calcOffset($this->currentPageNumber);
+        return $this->_calcOffset($this->limit, $this->currentPageNumber);
     }
 
     // }}}
@@ -203,7 +203,9 @@ class Piece_Unity_Service_Paginator
             && $this->_previousLimit != $this->limit
             ) {
             $this->currentPageNumber =
-                $this->_calcPageNumber($this->_calcOffset($this->_previousPageNumber));
+                $this->_calcPageNumber($this->_calcOffset($this->_previousLimit,
+                                                          $this->_previousPageNumber) + 1
+                                       );
         }
 
         if ($this->currentPageNumber > $this->getLastPageNumber()) {
@@ -231,12 +233,13 @@ class Piece_Unity_Service_Paginator
     /**
      * Calculates the offset by a given page number and the limit.
      *
+     * @param integer $limit
      * @param integer $pageNumber
      * @return interger
      */
-    function _calcOffset($pageNumber)
+    function _calcOffset($limit, $pageNumber)
     {
-        return $this->limit * ($pageNumber - 1);
+        return $limit * ($pageNumber - 1);
     }
 
     /**#@-*/
