@@ -78,8 +78,8 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
         $paginator = &new Piece_Unity_Service_Paginator();
         $paginator->uri = 'http://example.org/';
         $paginator->currentPageNumber = 2;
-        $paginator->count = 24;
         $paginator->limit = 5;
+        $paginator->count = 24;
 
         $this->assertEquals(5, $paginator->getOffset());
     }
@@ -95,8 +95,8 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
     {
         $paginator = &new Piece_Unity_Service_Paginator();
         $paginator->uri = 'http://example.org/';
-        $paginator->count = 243;
         $paginator->limit = 25;
+        $paginator->count = 243;
 
         $this->assertTrue($paginator->hasPages());
 
@@ -111,15 +111,15 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
     {
         $paginator = &new Piece_Unity_Service_Paginator();
         $paginator->uri = 'http://example.org/';
-        $paginator->count = 243;
         $paginator->limit = 25;
+        $paginator->count = 243;
 
         $this->assertEquals(1, $paginator->getStartCount());
         $this->assertEquals(25, $paginator->getEndCount());
 
         $paginator->paginate();
-        $paginator->currentPageNumber = 10;
         $paginator->count = 243;
+        $paginator->currentPageNumber = 10;
         $paginator->limit = 25;
 
         $this->assertEquals(226, $paginator->getStartCount());
@@ -138,7 +138,6 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
 
         $paginator->paginate();
         $paginator->count = 243;
-
         $paginator->currentPageNumber = 3;
 
         $this->assertEquals(50, $paginator->getOffset());
@@ -146,7 +145,6 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
 
         $paginator->paginate();
         $paginator->count = 243;
-
         $paginator->limit = 50;
 
         $this->assertEquals(50, $paginator->getOffset());
@@ -154,7 +152,6 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
 
         $paginator->paginate();
         $paginator->count = 243;
-
         $paginator->limit = 100;
 
         $this->assertEquals(0, $paginator->getOffset());
@@ -173,7 +170,6 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
 
         $paginator->paginate();
         $paginator->count = 243;
-
         $paginator->limit = 50;
 
         $this->assertEquals(0, $paginator->getOffset());
@@ -181,7 +177,6 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
 
         $paginator->paginate();
         $paginator->count = 243;
-
         $paginator->currentPageNumber = 2;
 
         $this->assertEquals(50, $paginator->getOffset());
@@ -189,7 +184,6 @@ class Piece_Unity_Service_PaginatorTestCase extends PHPUnit_TestCase
 
         $paginator->paginate();
         $paginator->count = 243;
-
         $paginator->limit = 25;
 
         $this->assertEquals(50, $paginator->getOffset());
