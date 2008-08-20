@@ -74,15 +74,9 @@ class Piece_Unity_Service_PaginationTestCase extends PHPUnit_TestCase
      * @access public
      */
 
-    function setUp()
-    {
-        Piece_Unity_Error::pushCallback(create_function('$error', 'var_dump($error); return ' . PEAR_ERRORSTACK_DIE . ';'));
-    }
-
     function tearDown()
     {
         Piece_Unity_Error::clearErrors();
-        Piece_Unity_Error::popCallback();
     }
 
     function testShouldPaginateOnTheFirstPage()
