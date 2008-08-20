@@ -259,4 +259,3 @@ class Piece_Unity_Service_Paginator
  * indent-tabs-mode: nil
  * End:
  */
-?>

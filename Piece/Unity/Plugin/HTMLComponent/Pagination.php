@@ -109,4 +109,3 @@ class Piece_Unity_Plugin_HTMLComponent_Pagination extends Piece_Unity_Plugin_Com
  * indent-tabs-mode: nil
  * End:
  */
-?>
