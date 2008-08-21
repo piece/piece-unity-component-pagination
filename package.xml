@@ -15,8 +15,8 @@ Piece_Unity_Component_Pagination provides a service which creates a pagination H
   <email>iteman@users.sourceforge.net</email>
   <active>yes</active>
  </lead>
- <date>2008-06-19</date>
- <time>13:53:04</time>
+ <date>2008-08-21</date>
+ <time>21:32:20</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
@@ -94,11 +94,6 @@ Piece_Unity_Component_Pagination provides a service which creates a pagination H
     <channel>pear.piece-framework.com</channel>
     <min>1.5.0</min>
    </package>
-   <package>
-    <name>PEAR</name>
-    <channel>pear.php.net</channel>
-    <min>1.4.3</min>
-   </package>
   </required>
  </dependencies>
  <phprelease />
@@ -112,7 +107,7 @@ Piece_Unity_Component_Pagination provides a service which creates a pagination H
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2008-06-19</date>
+   <date>2008-08-21</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License (revised)</license>
    <notes>The first beta release of Piece_Unity_Component_Pagination.</notes>
   </release>
