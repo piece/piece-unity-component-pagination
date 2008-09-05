@@ -15,8 +15,8 @@ Piece_Unity_Component_Pagination provides a service which creates a pagination H
   <email>iteman@users.sourceforge.net</email>
   <active>yes</active>
  </lead>
- <date>2008-08-21</date>
- <time>21:32:20</time>
+ <date>2008-09-05</date>
+ <time>11:58:27</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
@@ -107,7 +107,7 @@ Piece_Unity_Component_Pagination provides a service which creates a pagination H
     <release>beta</release>
     <api>beta</api>
    </stability>
-   <date>2008-08-21</date>
+   <date>2008-09-05</date>
    <license uri="http://www.opensource.org/licenses/bsd-license.php">BSD License (revised)</license>
    <notes>The first beta release of Piece_Unity_Component_Pagination.</notes>
   </release>
